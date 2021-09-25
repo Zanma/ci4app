@@ -7,20 +7,34 @@ class Pages extends BaseController
     public function index()
     {
         $data = [
-            "title" => "Home | Zanma Web",
-            'tes' => ['satu', 'dua', 'tiga']
+            "title" => "Home | Zanma Web"
         ];
-        echo view('layout/header', $data);
-        echo view('pages/home');
-        echo view('layout/footer');
+        return view('pages/home', $data);
     }
     public function about()
     {
         $data = [
-            "title" => "Home | Zanma Web"
+            "title" => "About | Zanma Web"
         ];
-        echo view('layout/header', $data);
-        echo view('pages/about');
-        echo view('layout/footer');
+        return view('pages/about', $data);
+    }
+    public function contact()
+    {
+        $data = [
+            "title" => "Contact | Zanma Web",
+            "alamat" => [
+                [
+                    "tipe" => "rumah",
+                    "alamat" => "jl tirtotejo",
+                    "kota" => "Solo"
+                ],
+                [
+                    "tipe" => "kantor",
+                    "alamat" => "jl sutan syahrir",
+                    "kota" => "Jakarta"
+                ]
+            ]
+        ];
+        return view('pages/contact', $data);
     }
 }
