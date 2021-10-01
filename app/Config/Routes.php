@@ -35,7 +35,10 @@ $routes->get('/', 'Pages::index');
 
 
 $routes->get('/komik/create', 'Komik::create');
-$routes->get('/komik/(:segment)', 'Komik::detail/$1');
+$routes->get('/komik/edit/(:segment)', 'Komik::edit/$1');
+
+$routes->delete('/komik/(:num)', 'Komik::delete/$1');
+$routes->get('/komik/(:any)', 'Komik::detail/$1');
 
 
 
@@ -46,7 +49,7 @@ $routes->get('/komik/(:segment)', 'Komik::detail/$1');
 // $routes->get('/coba/index', 'Coba::index');
 // $routes->get('/coba/about', 'Coba::about');
 
-// num = angka, segment = apapun kecuali slash, alpha = alphabet, alphanum = angka huruf ( char gk masuk)
+// num = angka, any = apapun kecuali slash, segment = apapun termasuk slash, alpha = alphabet, alphanum = angka huruf ( char gk masuk)
 // $routes->get('/coba/(:any)', 'Coba::about/$1');
 
 // $routes->get('/users', 'Admin\Users::index');
